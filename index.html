@@ -7,8 +7,6 @@
 
 <title>For You</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-
 <style>
 
 body{
@@ -16,7 +14,7 @@ margin:0;
 height:100vh;
 background:url("back.jpg") no-repeat center;
 background-size:cover;
-font-family:Poppins;
+font-family:cursive;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -34,6 +32,7 @@ display:none;
 justify-content:center;
 align-items:center;
 flex-direction:column;
+padding:20px;
 }
 
 .active{
@@ -42,60 +41,35 @@ display:flex;
 
 /* text */
 
-.bubble{
-font-family:Pacifico;
-font-size:25px;
+.big{
+font-size:50px;
 }
 
-.cursive{
-font-family:Great Vibes;
-font-size:32px;
+.medium{
+font-size:40px;
 }
 
-.thin{
-font-weight:300;
-font-size:22px;
+.small{
+font-size:30px;
 }
 
 /* buttons */
 
 .btn{
-padding:12px 35px;
-border-radius:40px;
+padding:18px 45px;
+border-radius:60px;
 border:none;
-margin:10px;
-font-size:18px;
+margin:15px;
+font-size:28px;
 cursor:pointer;
-text-decoration:underline;
-}
-
-.white{
-background:white;
-}
-
-.wine{
 background:#7a1d3b;
 color:white;
 }
 
 /* popup */
 
-.popup{
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 0 20px rgba(0,0,0,0.3);
-animation:pop .4s;
-max-width:90%;
-}
-
 .popup img{
-width:170px;
-}
-
-@keyframes pop{
-from{transform:scale(.6);opacity:0}
-to{transform:scale(1);opacity:1}
+width:260px;
 }
 
 /* next button */
@@ -103,48 +77,36 @@ to{transform:scale(1);opacity:1}
 .next{
 position:absolute;
 bottom:30px;
-right:30px;
-padding:12px 35px;
-border-radius:40px;
-background:#c47a8c;
+right:40px;
+padding:18px 45px;
+border-radius:60px;
+background:#7a1d3b;
 color:white;
-text-decoration:underline;
+font-size:26px;
 cursor:pointer;
 }
 
 /* envelope */
 
 .envelope{
-width:220px;
-height:140px;
-background:#ffd6e0;
+width:280px;
+height:180px;
 border-radius:10px;
-margin-top:20px;
-position:relative;
 cursor:pointer;
+position:relative;
 }
+
+.env1{background:#ffd6e0;}
+.env2{background:#d83c5a;}
+.env3{background:#e8d7c3;}
 
 .letter{
 display:none;
-width:250px;
+width:420px;
 background:white;
-padding:20px;
+padding:30px;
 border-radius:10px;
-margin-top:20px;
-}
-
-/* hearts */
-
-.heart{
-position:absolute;
-font-size:20px;
-animation:float 3s infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-20px)}
-100%{transform:translateY(0)}
+font-size:26px;
 }
 
 /* polaroid */
@@ -152,8 +114,8 @@ animation:float 3s infinite;
 .polaroid{
 background:white;
 padding:10px;
-margin:10px;
-width:120px;
+margin:15px;
+width:160px;
 }
 
 .polaroid img{
@@ -163,20 +125,25 @@ width:100%;
 /* gift */
 
 .gift{
-width:200px;
+width:260px;
 cursor:pointer;
 }
 
 /* responsive */
 
-@media(max-width:600px){
+@media(max-width:800px){
 
-.cursive{
-font-size:24px;
+.big{font-size:38px;}
+.medium{font-size:30px;}
+.small{font-size:24px;}
+
+.envelope{
+width:220px;
+height:150px;
 }
 
-.popup img{
-width:130px;
+.polaroid{
+width:120px;
 }
 
 }
@@ -191,118 +158,74 @@ width:130px;
 
 <div class="screen active" id="main">
 
-<div class="bubble">Hey!!!</div>
+<div class="big">Hey!!!</div>
 
-<div class="cursive" id="line1" style="display:none">
+<div class="medium" id="line1" style="display:none">
 I made something for you
 </div>
 
-<div class="thin" id="line2" style="display:none">
+<div class="medium" id="line2" style="display:none">
 Do you want to see ???
 </div>
 
 <div id="buttons" style="display:none">
 
-<button class="btn white" onclick="yes()">YES</button>
-
-<button class="btn white" onclick="no()">NO</button>
-
-</div>
+<button class="btn" onclick="yes()">YES</button>
+<button class="btn" onclick="no()">NO</button>
 
 </div>
 
-<!-- NO POPUP 1 -->
+</div>
+
+<!-- NO SECTION -->
 
 <div class="screen" id="no1">
-
 <div class="popup">
-
 <img src="anger.jpg">
-
-<h2 style="color:#7a1d3b">HOW DARE YOU</h2>
-
-<button class="btn white" onclick="no2()">soch lo</button>
-
+<div class="medium" style="color:#7a1d3b">HOW DARE YOU</div>
+<button class="btn" onclick="no2()">SOCH LO</button>
 </div>
-
 </div>
-
-<!-- NO POPUP 2 -->
 
 <div class="screen" id="no2">
-
 <div class="popup">
-
 <img src="soch.jpg">
-
-<h2>SACH ME ???</h2>
-
-<button class="btn white" onclick="no3()">Aisa karoge phir?</button>
-
+<div class="medium">SACH ME ???</div>
+<button class="btn" onclick="no3()">AISA KAROGE?</button>
 </div>
-
 </div>
-
-<!-- NO POPUP 3 -->
 
 <div class="screen" id="no3">
-
 <div class="popup">
-
 <img src="aisa.jpg">
-
-<button class="btn white" onclick="no4()">Me ro dungi</button>
-
+<button class="btn" onclick="no4()">ME RO DUNGI</button>
 </div>
-
 </div>
-
-<!-- NO POPUP 4 -->
 
 <div class="screen" id="no4">
-
 <div class="popup">
-
 <img src="ro.jpg">
-
-<h2>TO TUM BURE HI...</h2>
-
-<button class="btn white" onclick="no5()">Me mukka maar dungi</button>
-
+<div class="medium">HO TO TUM BURE HI...</div>
+<button class="btn" onclick="no5()">Me mukka maar dungi</button>
 </div>
-
 </div>
-
-<!-- FINAL YES FORCE -->
 
 <div class="screen" id="no5">
-
 <div class="popup">
-
 <img src="yes.jpg">
-
-<h2>AB TO YES HI KARNA PADEGA</h2>
-
-<button class="btn wine" onclick="yes()">Yes</button>
-
+<div class="medium">AB TO YES HI KARNA PADEGA</div>
+<button class="btn" onclick="yes()">YES</button>
 </div>
-
 </div>
 
 <!-- YES POPUP -->
 
 <div class="screen" id="yes">
-
 <div class="popup">
-
 <img src="happy.jpg">
-
-<h2>That's a good boyyyy</h2>
-
-<button class="btn wine" onclick="birthday()">click</button>
-
+<div class="medium">That's a good boyyyy</div>
+<button class="btn" onclick="birthday()">Click</button>
 </div>
-
 </div>
 
 <!-- BIRTHDAY -->
@@ -310,51 +233,76 @@ Do you want to see ???
 <div class="screen" id="birthday">
 
 <div class="popup">
-
 <img src="pop.jpg">
 
-<h2>Happy Birthday buttercup ❣️</h2>
+<div class="medium">Happy Birthday buttercup ❣️</div>
 
-<p>You are my favourite notification 🩷</p>
+<div class="small">
+You are my favourite notification 🩷
+</div>
 
-<p>Stay cute, Stay Happy, stay mine 🔪 💗</p>
+<div class="small">
+Stay cute, Stay Happy, stay mine 🔪 💗
+</div>
 
 </div>
 
-<div class="next" onclick="letter()">next</div>
+<div class="next" onclick="env1()">Next</div>
 
 </div>
 
-<!-- LETTER PAGE -->
+<!-- ENVELOPE 1 -->
 
-<div class="screen" id="letter">
+<div class="screen" id="env1">
 
-<img src="letter.jpg" width="200">
+<div class="medium">OPEN ME…</div>
 
-<p style="text-decoration:underline;cursor:pointer" onclick="openLetter()">
-Tap here to open
-</p>
+<div class="envelope env1" onclick="openLetter1()"></div>
 
-<div class="envelope" onclick="openLetter()"></div>
+<div class="letter" id="letter1">
+You are the most beautiful part of my life.
+Thank you for making everything brighter.
+</div>
 
-<div class="letter" id="letterText">
-
-<h3>My Letter</h3>
-
-<p>
-You are the sweetest person in my life.
-Thank you for always making me smile.
-I hope your birthday is as special
-as you are to me.
-</p>
+<div class="next" onclick="env2()">Next</div>
 
 </div>
 
-<div class="next" onclick="photos()">next</div>
+<!-- ENVELOPE 2 -->
+
+<div class="screen" id="env2">
+
+<div class="medium">OPEN ME…</div>
+
+<div class="envelope env2" onclick="openLetter2()"></div>
+
+<div class="letter" id="letter2">
+Every moment with you feels magical.
+I hope you always keep smiling.
+</div>
+
+<div class="next" onclick="env3()">Next</div>
 
 </div>
 
-<!-- PHOTOS PAGE -->
+<!-- ENVELOPE 3 -->
+
+<div class="screen" id="env3">
+
+<div class="medium">OPEN ME…</div>
+
+<div class="envelope env3" onclick="openLetter3()"></div>
+
+<div class="letter" id="letter3">
+You mean more to me than words can say.
+Happy Birthday once again 💗
+</div>
+
+<div class="next" onclick="photos()">Next</div>
+
+</div>
+
+<!-- PHOTOS -->
 
 <div class="screen" id="photos">
 
@@ -374,29 +322,35 @@ as you are to me.
 
 </div>
 
-<h2 style="font-family:Pacifico">I love you 💗💗💗</h2>
+<div class="big">I love you 💗💗💗</div>
 
-<p>You don't know how much you mean to me</p>
+<div class="small">
+You don't know how much you mean to me
+</div>
 
-<div class="next" onclick="gift()">next</div>
+<div class="next" onclick="gift()">Next</div>
 
 </div>
 
-<!-- GIFT PAGE -->
+<!-- GIFT -->
 
 <div class="screen" id="gift">
 
-<h2>Here's a surprise for you</h2>
+<div class="big">Here's a surprise for you</div>
 
-<img src="gift.jpg" class="gift" onclick="openGift()">
+<img src="gift.png" class="gift" onclick="openGift()">
 
 <div id="giftBox" style="display:none">
 
-<h3>Here is a virtual hug for you</h3>
+<div class="medium">
+Here is a virtual hug for you
+</div>
 
-<img src="gif.mp4" width="200">
+<video width="300" autoplay loop muted>
+<source src="gif.mp4" type="video/mp4">
+</video>
 
-<h3>Happy Birthday ❣️ 🌹</h3>
+<div class="medium">Happy Birthday ❣️ 🌹</div>
 
 </div>
 
@@ -404,73 +358,48 @@ as you are to me.
 
 <script>
 
-/* animation */
-
-setTimeout(()=>{
-document.getElementById("line1").style.display="block"
-},1000)
-
-setTimeout(()=>{
-document.getElementById("line2").style.display="block"
-},2000)
-
-setTimeout(()=>{
-document.getElementById("buttons").style.display="block"
-},3000)
-
-/* screen changer */
+setTimeout(()=>{document.getElementById("line1").style.display="block"},1000)
+setTimeout(()=>{document.getElementById("line2").style.display="block"},2000)
+setTimeout(()=>{document.getElementById("buttons").style.display="block"},3000)
 
 function show(id){
-
-document.querySelectorAll(".screen").forEach(s=>{
-s.classList.remove("active")
-})
-
+document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"))
 document.getElementById(id).classList.add("active")
-
 }
 
-/* yes no */
-
 function yes(){show("yes")}
-
 function no(){show("no1")}
-
 function no2(){show("no2")}
-
 function no3(){show("no3")}
-
 function no4(){show("no4")}
-
 function no5(){show("no5")}
-
-/* pages */
 
 function birthday(){show("birthday")}
 
-function letter(){show("letter")}
+function env1(){show("env1")}
+function env2(){show("env2")}
+function env3(){show("env3")}
 
 function photos(){show("photos")}
-
 function gift(){show("gift")}
 
-/* letter */
-
-function openLetter(){
-
-document.getElementById("letterText").style.display="block"
-
+function openLetter1(){
+document.getElementById("letter1").style.display="block"
 }
 
-/* gift */
+function openLetter2(){
+document.getElementById("letter2").style.display="block"
+}
+
+function openLetter3(){
+document.getElementById("letter3").style.display="block"
+}
 
 function openGift(){
-
 document.getElementById("giftBox").style.display="block"
-
 }
 
 </script>
 
 </body>
-  </html>
+</html>
