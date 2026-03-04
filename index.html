@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>For You</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Indie+Flower&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+background:url("back.jpg") no-repeat center;
+background-size:cover;
+font-family:'Indie Flower',cursive;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+overflow:hidden;
+}
+
+.page{
+display:none;
+width:100%;
+}
+
+.show{
+display:block;
+}
+
+button{
+padding:10px 25px;
+border-radius:40px;
+border:none;
+font-size:18px;
+text-decoration:underline;
+font-weight:bold;
+margin:10px;
+}
+
+.next{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#722f37;
+color:white;
+padding:10px 25px;
+border-radius:40px;
+text-decoration:underline;
+}
+
+.popup img{
+width:200px;
+}
+
+.letter{
+background:white;
+padding:20px;
+border-radius:10px;
+width:80%;
+margin:auto;
+}
+
+.photo img{
+width:120px;
+margin:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+
+<div id="page1" class="page show">
+
+<h1 id="hey" style="font-size:25px;display:none;">Hey!!!</h1>
+
+<div id="line1" style="display:none;font-family:Pacifico;">I made something for you</div>
+
+<div id="line2" style="display:none;font-style:italic;">Do you want to see ???</div>
+
+<div id="buttons" style="display:none;">
+<button onclick="showPage('yes1')">YES</button>
+<button onclick="showPage('no1')">NO</button>
+</div>
+
+</div>
+
+<!-- NO PAGE -->
+
+<div id="no1" class="page">
+
+<div class="popup">
+
+<img src="anger.jpg">
+
+<h1 style="color:#722f37;">HOW DARE YOU</h1>
+
+<button onclick="step1()">Soch Lo</button>
+
+<div id="noButtons"></div>
+
+</div>
+
+</div>
+
+<!-- YES PAGE -->
+
+<div id="yes1" class="page">
+
+<img src="happy.jpg" width="200">
+
+<h2>That's a good boyyyy</h2>
+
+<button onclick="showPage('birthday')"
+style="background:#722f37;color:white;">click</button>
+
+</div>
+
+<!-- BIRTHDAY PAGE -->
+
+<div id="birthday" class="page">
+
+<img src="pop.jpg" width="250">
+
+<h2>Happy Birthday buttercup ❣️</h2>
+
+<p>You are my favourite notification 🩷</p>
+
+<p>Stay cute, Stay Happy, stay mine 🔪💗</p>
+
+<div class="next" onclick="showPage('letter')">Next</div>
+
+</div>
+
+<!-- LETTER OPEN -->
+
+<div id="letter" class="page">
+
+<img src="letter.jpg" width="250">
+
+<div onclick="openLetter()" style="cursor:pointer;text-decoration:underline;">
+Tap here to open
+</div>
+
+<div id="letterText" style="display:none;" class="letter">
+
+<p>
+
+Happy Birthday ❤️  
+You are the cutest person in my life.  
+I hope your day is filled with happiness, laughter and love.  
+Stay the same sweet person forever.
+
+</p>
+
+<img src="he.jpg" width="120">
+<img src="she.jpg" width="120">
+
+<div class="next" onclick="showPage('photos')">Next</div>
+
+</div>
+
+</div>
+
+<!-- PHOTOS PAGE -->
+
+<div id="photos" class="page">
+
+<div class="photo">
+
+<img src="1.jpg">
+<img src="2.jpg">
+<img src="3.jpg">
+
+</div>
+
+<h2>I love you ❤️❤️❤️</h2>
+
+<p>You don't know how much you mean to me</p>
+
+<div class="next" onclick="showPage('gift')">Next</div>
+
+</div>
+
+<!-- GIFT PAGE -->
+
+<div id="gift" class="page">
+
+<h1>Here's a surprise for you 🎁</h1>
+
+<div style="font-size:60px;cursor:pointer;" onclick="openGift()">🎁</div>
+
+<div id="giftOpen" style="display:none;">
+
+<h2>Here is a virtual hug for you</h2>
+
+<img src="hug.gif" width="200">
+
+<h3>🌹 Happy Birthday ❣️</h3>
+
+</div>
+
+</div>
+
+
+<script>
+
+setTimeout(()=>{hey.style.display="block"},500)
+setTimeout(()=>{line1.style.display="block"},1500)
+setTimeout(()=>{line2.style.display="block"},2500)
+setTimeout(()=>{buttons.style.display="block"},3500)
+
+function showPage(id){
+
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("show"))
+
+document.getElementById(id).classList.add("show")
+
+}
+
+function step1(){
+noButtons.innerHTML="<button onclick='step2()'>Aisa karoge</button>"
+}
+
+function step2(){
+noButtons.innerHTML="<button onclick='step3()'>Me ro dungi</button>"
+}
+
+function step3(){
+noButtons.innerHTML="<button onclick='step4()'>Me mukka maar dungi</button>"
+}
+
+function step4(){
+noButtons.innerHTML="<button onclick=\"showPage('yes1')\">YES</button>"
+}
+
+function openLetter(){
+letterText.style.display="block"
+}
+
+function openGift(){
+giftOpen.style.display="block"
+}
+
+</script>
+
+</body>
+</html>
